@@ -1,0 +1,51 @@
+<[file][][]
+    <[modelmanager][][]
+        <[pointer_list_tmuniverse][DynamicObjects][]
+
+            // engine
+            <[input_lever][ThrottleInput][]
+                <[float64][Value][0.236361680502639]>
+            >
+            <[servolinear][ServoThrottle][]
+                <[float64][Position][0.368724221584116]>
+            >
+            <[multibody_joint][PropellerJoint][]
+                <[float64][Velocity][188.0]>
+            >
+
+            // flaps full
+            <[input_lever][FlapsInput][]
+                <[float64][Value][1.0]>
+            >
+            <[servoclassic][ServoFlaps][]
+                <[float64][Position][0.872664619237]>
+            >
+
+            // trim
+            <[input_default][PitchTrim][]
+                <[float64][Value][-0.360101747359642]>
+            >
+            <[servoclassic][PitchTrimDisplay][]
+                <[float64][Position][-0.260979231501367]>
+            >
+            <[servoclassic][ServoElevator][]
+                <[float64][Position][-0.0118076504152001]>
+            >
+
+            // lights
+            <[input_switch][BeaconLightSwitch][]
+                <[float64][Value][1.0]>
+            >
+            <[input_switch][NavigationLightSwitch][]
+                <[float64][Value][1.0]>
+            >
+            <[input_switch][LeftLandingLightSwitch][]
+                <[float64][Value][1.0]>
+            >
+            <[input_switch][RightLandingLightSwitch][]
+                <[float64][Value][1.0]>
+            >
+
+        >
+    >
+>

@@ -1,0 +1,101 @@
+<[file][up][]
+    <[modelmanager][][]
+        <[pointer_list_tmuniverse][DynamicObjects][]
+
+            // flaps up
+            <[input_lever][FlapsInput][]
+                <[float64][Value][0.0]>
+            >
+            <[servoclassic][ServoFlaps][]
+                <[float64][Position][0.0]>
+            >
+
+            // trim cruise
+            <[input_default][PitchTrim][]
+                <[float64][Value][0.0]>
+            >
+            <[servoclassic][PitchTrimDisplay][]
+                <[float64][Position][0.0]>
+            >
+            <[servoclassic][ServoElevator][]
+                <[float64][Position][0.0]>
+            >
+        >
+    >
+>
+<[file][takeoff][]
+    <[modelmanager][][]
+        <[pointer_list_tmuniverse][DynamicObjects][]
+
+            // flaps up
+            <[input_lever][FlapsInput][]
+                <[float64][Value][0.0]>
+            >
+            <[servoclassic][ServoFlaps][]
+                <[float64][Position][0.0]>
+            >
+
+            // trim takeoff
+            <[input_default][PitchTrim][]
+                <[float64][Value][0.0]>
+            >
+            <[servoclassic][PitchTrimDisplay][]
+                <[float64][Position][0.0]>
+            >
+            <[servoclassic][ServoElevator][]
+                <[float64][Position][0.0]>
+            >
+        >
+    >
+>
+<[file][approach][]
+    <[modelmanager][][]
+        <[pointer_list_tmuniverse][DynamicObjects][]
+
+            // flaps approach
+            <[input_lever][FlapsInput][]
+                <[float64][Value][0.5]>
+            >
+            <[servoclassic][ServoFlaps][]
+                <[float64][Position][0.26]>
+            >
+
+            // trim approach
+            <[input_default][PitchTrim][]
+                <[float64][Value][0.0]>
+            >
+            <[servoclassic][PitchTrimDisplay][]
+                <[float64][Position][0.0]>
+            >
+            <[servoclassic][ServoElevator][]
+                <[float64][Position][0.0]>
+            >
+        >
+    >
+>
+<[file][landing][]
+    <[modelmanager][][]
+        <[pointer_list_tmuniverse][DynamicObjects][]
+
+            // flaps full
+            <[input_lever][FlapsInput][]
+                <[float64][Value][1.0]>
+            >
+            <[servoclassic][ServoFlaps][]
+                <[float64][Position][0.872664619237]>
+            >
+
+            // trim landing
+            <[input_default][PitchTrim][]
+                <[float64][Value][-0.360101747359642]>
+            >
+            <[servoclassic][PitchTrimDisplay][]
+                <[float64][Position][-0.260979231501367]>
+            >
+            <[servoclassic][ServoElevator][]
+                <[float64][Position][-0.0118076504152001]>
+            >
+        >
+    >
+>
+

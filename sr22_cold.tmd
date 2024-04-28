@@ -1,0 +1,64 @@
+<[file][][]
+    <[modelmanager][][]
+        <[pointer_list_tmuniverse][DynamicObjects][]
+
+            <[input_lever][ThrottleInput][]
+                <[float64][Value][0.0]>
+            >
+            <[input_lever][MixtureLever][]
+                <[float64][Value][0.0]>
+            >
+            <[servolinear][ServoThrottle][]
+                <[float64][Position][0.0]>
+            >
+            <[multibody_joint][PropellerJoint][]
+                <[float64][Velocity][0.0]>
+            >
+
+            <[input_discrete][Magnetos][]
+                <[float64][Value][0.0]>
+            >
+            <[input_switch][MasterBatterySwitch][]
+                <[float64][Value][0.0]>
+            >
+            <[input_switch][AlternatorSwitch][]
+                <[float64][Value][0.0]>
+            >
+            <[input_switch][ElectricalFuelPumpSwitch][]
+                <[float64][Value][0.0]>
+            >
+            <[input_binary][GPSSelectedOn][]
+                <[float64][Value][0.0]>
+            >
+            <[input_default][COM1Volume][]
+                <[float64][Value][0.0]>
+            >
+            <[input_discrete][TransponderMode][]
+                <[float64][Value][0.0]>
+            >
+
+            // flaps 0
+            <[input_lever][FlapsInput][]
+                <[float64][Value][0.0]>
+            >
+            <[servoclassic][ServoFlaps][]
+                <[float64][Position][0.0]>
+            >
+
+            // lights
+            <[input_switch][BeaconLightSwitch][]
+                <[float64][Value][0.0]>
+            >
+            <[input_switch][NavigationLightSwitch][]
+                <[float64][Value][0.0]>
+            >
+            <[input_switch][LeftLandingLightSwitch][]
+                <[float64][Value][0.0]>
+            >
+            <[input_switch][RightLandingLightSwitch][]
+                <[float64][Value][0.0]>
+            >
+
+        >
+    >
+>

@@ -1,0 +1,60 @@
+﻿<[file][][]
+    <[object][][]
+        <[int][Version][220]>
+        <[vec32array][ContactSpheres][ ( 1.969 0.0 -0.569 0.189 ) ( -0.2733 1.345 -0.569 0.189 ) ( -0.2733 -1.345 -0.569 0.189 ) ]>
+        <[string8][ICAO][DR40]>
+        <[string8][DisplayName][Cirrus SR22]>
+        <[string8][DisplayNameFull][Cirrus SR22]>
+        <[localized_text_list][Descriptions][]
+          <[localized_text][][]
+            <[string8][Language][en]>
+            <[string8][Text][The Cirrus SR22 is a single-engine four- or five-seat composite aircraft built from 2001 by Cirrus Aircraft of Duluth, Minnesota. https://rigmodels.com/]>
+          >
+          <[localized_text][][]
+            <[string8][Language][de]>
+            <[string8][Text][Die Cirrus SR22 ist ein in Holzbauweise hergestellter einmotoriger Tiefdecker. https://rigmodels.com/]>
+          >
+        >
+        <[float64][MaximumTakeoffMass][1633]>
+        <[float64][WingSpan]          [11.68]>
+        <[uint]   [Year]              [2001]>
+        <[uint]   [UnitsBuilt]        [1300]>
+        <[uint]   [EngineCount]       [1]>
+        <[float64][EnginePower]       [118000.0]>
+        <[float64][MinimumAirspeed]   [30.0]>
+        <[float64][ApproachAirspeed]  [36.1]>
+        <[float64][CruiseAirspeed]    [92.5]>
+        <[float64][CruiseAltitude]    [1826.0]>
+        <[float64][CruiseSpeed]       [106.0]>
+        <[float64][MaximumAirspeed]   [105.4]>
+        <[float64][MaximumAltitude]   [5300.0]>
+        <[float64][MaximumSpeed]      [105.4]>
+        <[float64][MaximumRange]      [1943000.0]>
+        <[tmvector2d][FlapAirspeedRange]   [ 30.0 57.2 ]>
+        <[tmvector2d][NormalAirspeedRange] [ 32.5 92.2 ]>
+        <[tmvector2d][CautionAirspeedRange][ 92.2 105.4 ]>
+        <[string8][Tags][ airplane general_aviation piston flaps gear autopilot ]>
+        <[string8][Pilot][pilot_robert]>
+    >
+>
+
+General characteristics
+
+Crew: one
+Capacity: four passengers
+Length: 26 ft 0 in (7.92 m)
+Wingspan: 38 ft 4 in (11.68 m)
+Height: 8 ft 11 in (2.72 m)
+Airfoil: Roncz
+Empty weight: 2,269 lb (1,029 kg)
+Gross weight: 3,600 lb (1,633 kg)
+Fuel capacity: 92 US gallons (348 litres)
+Powerplant: 1 × Continental IO-550-N Six cylinder horizontally opposed aircraft engine, 310 hp (230 kW)
+Propellers: 3-bladed
+Performance
+
+Cruise speed: 183 kn (211 mph, 339 km/h)
+Stall speed: 60 kn (69 mph, 110 km/h) flaps down
+Range: 1,049 nmi (1,207 mi, 1,943 km) with reserves at 65% power
+Service ceiling: 17,500 ft (5,300 m)
+Rate of climb: 1,270 ft/min (6.5 m/s)

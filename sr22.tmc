@@ -8,11 +8,11 @@
         <[localized_text_list][Descriptions][]
           <[localized_text][][]
             <[string8][Language][en]>
-            <[string8][Text][The Cirrus SR22 is a single-engine four- or five-seat composite aircraft built from 2001 by Cirrus Aircraft of Duluth, Minnesota. https://rigmodels.com/]>
+            <[string8][Text][The Cirrus SR22 is a single-engine four- or five-seat composite aircraft built from 2001 by Cirrus Aircraft of Duluth, Minnesota.Made by Krzysztof Kaniewski. 3D model: RigModels.com.]>
           >
           <[localized_text][][]
             <[string8][Language][de]>
-            <[string8][Text][Die Cirrus SR22 ist ein in Holzbauweise hergestellter einmotoriger Tiefdecker. https://rigmodels.com/]>
+            <[string8][Text][Die Cirrus SR22 ist ein in Holzbauweise hergestellter einmotoriger Tiefdecker.Hergestellt von Krzysztof Kaniewski. 3D-Modell: RigModels.com.]>
           >
         >
         <[float64][MaximumTakeoffMass][1633]>

@@ -2,1294 +2,219 @@
     <[modelmanager][][]
         <[pointer_list_tmcontrol][ControlObjects][]
 
-            // instrument adjust knobs
-            <[control_cylinder][AttitudeAdjust][]
-                <[string8][Type][knob]>
-                <[vector3_float64][R0][0.66082 0.24712 0.67698]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[float64][StepAngle][0.1]>
-                <[control_message][OnRotate][]
-                    <[string8][Message][AttitudeAdjust]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.006]>
-                <[float64][Length][0.015]>
+            // flight controls
+            <[control_input][StickElevator][]
+                <[uint32][InputID][StickElevator.Output]>
+                <[float64][Scaling][0.261800]>
             >
-            <[control_cylinder][PressureSetting][]
-                <[string8][Type][knob]>
-                <[vector3_float64][R0][0.66082 0.18862 0.67898]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[float64][StepAngle][0.1]>
-                <[control_message][OnRotate][]
-                    <[string8][Message][PressureSetting]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.006]>
-                <[float64][Length][0.015]>
+            <[control_input][StickAileron][]
+                <[uint32][InputID][StickAileron.Output]>
+                <[float64][Scaling][0.261800]>
             >
-            <[control_cylinder][DirectionalGyroAdjust][]
-                <[string8][Type][knob]>
-                <[vector3_float64][R0][0.65178 0.27765 0.58957]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[float64][StepAngle][0.1]>
-                <[control_message][OnRotate][]
-                    <[string8][Message][DirectionalGyroAdjust]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.006]>
-                <[float64][Length][0.015]>
+            <[control_rotation][ElevatorTransform][]
+                <[string8][Input][StickElevator.Output]>
+                <[tmvector3d][Axis][0.0 1.0 0.0]>
+                <[tmvector3d][Pivot][0.384660 0.0 -0.465340]>
             >
-            <[control_cylinder][OBSKnob][]
-                <[string8][Type][knob]>
-                <[vector3_float64][R0][0.65178 0.09715 0.58857]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[float64][StepAngle][0.1]>
-                <[control_message][OnRotate][]
-                    <[string8][Message][Navigation.SelectedCourse1]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][-1.0]>
-                >
-                <[float64][Radius][0.007]>
-                <[float64][Length][0.015]>
+            <[control_rotation][StickTransform][]
+                <[string8][InputTransform][ElevatorTransform.Output]>
+                <[string8][Input][StickAileron.Output]>
+                <[tmvector3d][Axis][1.0 0.0 0.0]>
+                <[tmvector3d][Pivot][0.384660 0.0 -0.465340]>
             >
-
-            // panel lighting
-            <[control_cylinder][DimKnobInstruments][]
-                <[string8][Type][knob]>
-                <[vector3_float64][R0][0.64596 -0.06779 0.51835]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[float64][StepAngle][0.22]>
+            <[control_cylinder][StickGrip][114]
+                <[string8][Type][stick]>
+                <[vector3_float64][R0][ 0.3459 0.0 0.01179 ]>
+                <[matrix3_float64][B0][ 0.0 0.0 1.0  0.0 1.0 0.0  -1.0 0.0 0.0 ]>
+                <[vector3_float64][Direction][ 1.0 0.0 0.0 ]>
+                <[vector3_float64][Direction2][ 0.0 -1.0 0.0 ]>
+                <[float64][StepDistance][0.00005]>
+                <[string8][InputTransform][StickTransform.Output]>
                 <[control_message][OnRotate][]
-                    <[string8][Message][Controls.Lighting.Instruments]>
+                    <[string8][Message][Controls.Roll.Input]>
                     <[string8][Qualifiers][step]>
-                    <[float64][Value][1.0]>
+                    <[float64][Value][15.0]>
                 >
-                <[float64][Radius][0.006]>
-                <[float64][Length][0.015]>
-            >
-            <[control_cylinder][DimKnobPanel][]
-                <[string8][Type][knob]>
-                <[vector3_float64][R0][0.64596 -0.03266 0.51835]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[float64][StepAngle][0.22]>
-                <[control_message][OnRotate][]
-                    <[string8][Message][Controls.Lighting.Panel]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.006]>
-                <[float64][Length][0.015]>
-            >
-
-            // intercom
-            <[control_cylinder][IntercomSquelch][]
-                <[string8][Type][knob]>
-                <[vector3_float64][R0][ 0.6461 0.08829 0.53485 ]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[float64][StepAngle][0.22]>
-                <[control_message][OnRotate][]
-                    <[string8][Message][Intercom.Squelch]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.006]>
-                <[float64][Length][0.013]>
-            >
-            <[control_cylinder][IntercomIsoAll][]
-                <[string8][Type][switch toggle]>
-                <[vector3_float64][R0][ 0.649 0.0691 0.53 ]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.0971 0.0000 0.9953]>
-                <[float64][StepDistance][0.005]>
                 <[control_message][OnStep][]
-                    <[string8][Message][Intercom.IsolationAll]>
+                    <[string8][Message][Controls.Pitch.Input]>
                     <[string8][Qualifiers][step]>
-                    <[float64][Value][-1.0]>
-                >
-                <[float64][Radius][0.002]>
-                <[float64][Length][0.008]>
-            >
-            <[control_cylinder][IntercomIsoAllBase][]
-                <[string8][Type][switch toggle base]>
-                <[vector3_float64][R0][ 0.652 0.0691 0.53 ]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.0971 0.0000 0.9953]>
-                <[control_message][OnStep][]
-                    <[string8][Message][Intercom.IsolationAll]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][-1.0]>
-                >
-                <[float64][Radius][0.006]>
-                <[float64][Length][0.002]>
-            >
-            <[control_cylinder][IntercomVolume][]
-                <[string8][Type][knob]>
-                <[vector3_float64][R0][ 0.6461 0.04873 0.53485 ]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[float64][StepAngle][0.22]>
-                <[control_message][OnRotate][]
-                    <[string8][Message][Intercom.Volume]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.006]>
-                <[float64][Length][0.013]>
-            >
-
-            // gps
-            <[control_cylinder][GPSOnOff][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][0.6553571 -0.1437582 0.6630602]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][GPS.OnOff]>
-                    <[string8][Qualifiers][toggle]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.0035]>
-                <[float64][Length][0.005]>
-            >
-            <[control_cylinder][GPSDirectTo][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][0.6553571 -0.1582039 0.6630602]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][GPS.DirectTo]>
-                    <[string8][Qualifiers][event]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.0035]>
-                <[float64][Length][0.005]>
-            >
-            <[control_cylinder][GPSZoomIn][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][0.6599216 -0.1660346 0.7111191]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][GPS.Zoom]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][-1.0]>
-                >
-                <[float64][Radius][0.0035]>
-                <[float64][Length][0.005]>
-            >
-            <[control_cylinder][GPSZoomOut][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][0.6609783 -0.1660346 0.7221698]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][GPS.Zoom]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.0035]>
-                <[float64][Length][0.005]>
-            >
-            <[control_cylinder][GPSNearest][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][ 0.6562831 -0.168686 0.6705606 ]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][GPS.Nearest]>
-                    <[string8][Qualifiers][event]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.0045]>
-                <[float64][Length][0.005]>
-            >
-            <[control_cylinder][GPSMenu][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][ 0.6565703 -0.1514553 0.673565 ]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][GPS.Menu]>
-                    <[string8][Qualifiers][event]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.0045]>
-                <[float64][Length][0.005]>
-            >
-            <[control_cylinder][GPSEnterMark][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][ 0.6577584 -0.1430113 0.6859879 ]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][GPS.EnterMark]>
-                    <[string8][Qualifiers][event]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.0045]>
-                <[float64][Length][0.005]>
-            >
-            <[control_cylinder][GPSQuit][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][ 0.6592815 -0.1426876 0.7019145 ]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][GPS.Quit]>
-                    <[string8][Qualifiers][event]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.0045]>
-                <[float64][Length][0.005]>
-            >
-            <[control_cylinder][GPSPageMode][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][ 0.6605332 -0.1511167 0.7150042 ]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][GPS.PageMode]>
-                    <[string8][Qualifiers][event]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.0045]>
-                <[float64][Length][0.005]>
-            >
-            <[control_cylinder][GPSCursorLeft][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][ 0.657 -0.156 0.6936 ]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][GPS.CursorLeft]>
-                    <[string8][Qualifiers][event]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.0044]>
-                <[float64][Length][0.003]>
-            >
-            <[control_cylinder][GPSCursorRight][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][ 0.657 -0.168 0.6936 ]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][GPS.CursorRight]>
-                    <[string8][Qualifiers][event]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.0044]>
-                <[float64][Length][0.003]>
-            >
-            <[control_cylinder][GPSCursorUp][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][ 0.6575 -0.162 0.7 ]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][GPS.CursorUp]>
-                    <[string8][Qualifiers][event]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.0044]>
-                <[float64][Length][0.003]>
-            >
-            <[control_cylinder][GPSCursorDown][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][ 0.656 -0.162 0.687 ]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][GPS.CursorDown]>
-                    <[string8][Qualifiers][event]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.0044]>
-                <[float64][Length][0.003]>
-            >
-
-            // elt
-            <[control_cylinder][ELTOn][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][ 0.66414 -0.32938 0.61723 ]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][ELT.On]>
-                    <[string8][Qualifiers][value]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.002]>
-                <[float64][Length][0.003]>
-            >
-            <[control_cylinder][ELTReset][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][ 0.66414 -0.35223 0.61723 ]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][ELT.Reset]>
-                    <[string8][Qualifiers][event]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.002]>
-                <[float64][Length][0.003]>
-            >
-
-            // com, nav
-            <[control_cylinder][COM1Volume][]
-                <[string8][Type][knob]>
-                <[vector3_float64][R0][0.6477468 -0.02987384 0.595]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[float64][StepAngle][0.22]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Communication.COM1Test]>
-                    <[string8][Qualifiers][value]>
-                    <[float64][Value][0.0]>
-                >
-                <[control_message][OnPull][]
-                    <[string8][Message][Communication.COM1Test]>
-                    <[string8][Qualifiers][value]>
-                    <[float64][Value][1.0]>
-                >
-                <[control_message][OnRotate][]
-                    <[string8][Message][Communication.COM1Volume]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.005]>
-                <[float64][Length][0.01]>
-            >
-            <[control_cylinder][COM1StandbyFrequencySmall][]
-                <[string8][Type][knob]>
-                <[vector3_float64][R0][0.63538 -0.06793 0.59602]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[float64][StepAngle][0.1]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Communication.COM1Pull25K]>
-                    <[string8][Qualifiers][value]>
-                    <[float64][Value][0.0]>
-                >
-                <[control_message][OnPull][]
-                    <[string8][Message][Communication.COM1Pull25K]>
-                    <[string8][Qualifiers][value]>
-                    <[float64][Value][1.0]>
-                >
-                <[control_message][OnRotate][]
-                    <[string8][Message][Communication.COM1StandbyFrequency]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.0055]>
-                <[float64][Length][0.009]>
-            >
-            <[control_cylinder][COM1StandbyFrequencyLarge][]
-                <[string8][Type][knob]>
-                <[vector3_float64][R0][0.64788 -0.06803 0.59472]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[float64][StepAngle][0.1]>
-                <[control_message][OnRotate][]
-                    <[string8][Message][Communication.COM1StandbyFrequency]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][40.0]>
-                >
-                <[float64][Radius][0.008]>
-                <[float64][Length][0.014]>
-            >
-            <[control_box][COM1FrequencySwap][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][0.65638 -0.01543 0.6205]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Communication.COM1FrequencySwap]>
-                    <[string8][Qualifiers][toggle]>
-                    <[float64][Value][1.0]>
-                >
-                <[vector3_float64][Dimensions][0.004 0.006 0.009]>
-            >
-
-            <[control_box][OBS1ModeButton][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][0.6518329 -0.09903306 0.595]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Navigation.OBS1Mode]>
-                    <[string8][Qualifiers][event]>
-                    <[float64][Value][1.0]>
-                >
-                <[vector3_float64][Dimensions][0.004 0.01 0.005]>
-            >
-
-            <[control_cylinder][NAV1Volume][]
-                <[string8][Type][knob]>
-                <[vector3_float64][R0][0.6477468 -0.129219 0.595]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[float64][StepAngle][0.22]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Navigation.NAV1Ident]>
-                    <[string8][Qualifiers][value]>
-                    <[float64][Value][0.0]>
-                >
-                <[control_message][OnPull][]
-                    <[string8][Message][Navigation.NAV1Ident]>
-                    <[string8][Qualifiers][value]>
-                    <[float64][Value][1.0]>
-                >
-                <[control_message][OnRotate][]
-                    <[string8][Message][Navigation.NAV1Volume]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.005]>
-                <[float64][Length][0.01]>
-            >
-            <[control_cylinder][NAV1StandbyFrequencySmall][]
-                <[string8][Type][knob]>
-                <[vector3_float64][R0][0.63538 -0.16843 0.59752]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[float64][StepAngle][0.1]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Navigation.NAV1PullOBS]>
-                    <[string8][Qualifiers][value]>
-                    <[float64][Value][0.0]>
-                >
-                <[control_message][OnPull][]
-                    <[string8][Message][Navigation.NAV1PullOBS]>
-                    <[string8][Qualifiers][value]>
-                    <[float64][Value][1.0]>
-                >
-                <[control_message][OnRotate][]
-                    <[string8][Message][Navigation.NAV1StandbyFrequency]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.0055]>
-                <[float64][Length][0.009]>
-            >
-            <[control_cylinder][NAV1StandbyFrequencyLarge][]
-                <[string8][Type][knob]>
-                <[vector3_float64][R0][0.64788 -0.16843 0.59652]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[float64][StepAngle][0.1]>
-                <[control_message][OnRotate][]
-                    <[string8][Message][Navigation.NAV1StandbyFrequency]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][20.0]>
-                >
-                <[float64][Radius][0.008]>
-                <[float64][Length][0.014]>
-            >
-            <[control_box][NAV1FrequencySwap][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][0.65638 -0.18193 0.6205]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Navigation.NAV1FrequencySwap]>
-                    <[string8][Qualifiers][toggle]>
-                    <[float64][Value][1.0]>
-                >
-                <[vector3_float64][Dimensions][0.004 0.006 0.009]>
-            >
-
-            // transponder
-            <[control_cylinder][TransponderMode][]
-                <[string8][Type][knob]>
-                <[vector3_float64][R0][0.6447735 -0.02812358 0.5610586]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[float64][StepAngle][0.4]>
-                <[control_message][OnRotate][]
-                    <[string8][Message][Communication.TransponderMode]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.006]>
-                <[float64][Length][0.012]>
-            >
-            <[control_box][TransponderSelect][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][0.6554078 -0.0661111 0.5668428]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Communication.TransponderSelect]>
-                    <[string8][Qualifiers][event]>
-                    <[float64][Value][1.0]>
-                >
-                <[vector3_float64][Dimensions][0.004 0.013 0.007]>
-            >
-            <[control_box][TransponderStore][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][0.6554078 -0.088477 0.5668428]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Communication.TransponderStore]>
-                    <[string8][Qualifiers][event]>
-                    <[float64][Value][1.0]>
-                >
-                <[vector3_float64][Dimensions][0.004 0.013 0.007]>
-            >
-            <[control_box][TransponderVFR][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][0.6554078 -0.0661111 0.5543104]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Communication.TransponderVFR]>
-                    <[string8][Qualifiers][event]>
-                    <[float64][Value][1.0]>
-                >
-                <[vector3_float64][Dimensions][0.004 0.013 0.007]>
-            >
-            <[control_box][TransponderIdent][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][0.6554078 -0.08830713 0.5543104]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Communication.TransponderIdent]>
-                    <[string8][Qualifiers][event]>
-                    <[float64][Value][1.0]>
-                >
-                <[vector3_float64][Dimensions][0.004 0.013 0.007]>
-            >
-            <[control_cylinder][TransponderSetKnob][]
-                <[string8][Type][knob]>
-                <[vector3_float64][R0][ 0.639512 -0.17015 0.56146 ]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[float64][StepAngle][0.2]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Communication.TransponderCursor]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][1.0]>
-                >
-                <[control_message][OnRotate][]
-                    <[string8][Message][Communication.TransponderDigit]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.007]>
-                <[float64][Length][0.02]>
-            >
-
-//            <[control_cylinder][ThrottleHideRight][]
-//                <[string8][Type][button]>
-//                <[vector3_float64][R0][0.6620331 0.01171171 0.6198605]>
-//                <[matrix3_float64][B0][ 1.0 0.0 0.0  0.0 1.0 0.0  0.0 0.0 1.0 ]>
-//                <[vector3_float64][Direction][ 1.0 0.0 0.0 ]>
-//                <[control_message][OnPush][]
-//                    <[string8][Message][Controls.ThrottleHideRight]>
-//                    <[string8][Qualifiers][toggle]>
-//                    <[float64][Value][1.0]>
-//                >
-//                <[float64][Radius][0.01]>
-//                <[float64][Length][0.005]>
-//            >
-            <[control_input][BannerHookInput][]
-                <[uint32][InputID][BannerHookReleased.Output]>
-                <[float64][Scaling][0.015]>
-            >
-            <[control_sum][BannerHookOffset][]
-                <[uint32][Inputs][BannerHookInput.Output 0.005]>
-            >
-            <[control_translation][BannerHookTranslation][]
-                <[string8][Input][BannerHookOffset.Output]>
-                <[tmvector3d][Axis][ -0.9944026 0.01480581 0.1046144 ]>
-            >
-            <[control_cylinder][BannerHookRelease][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][0.6371657 0.4296653 0.5422947]>
-                <[matrix3_float64][B0][ 0.120018  0.173648  0.977467  -0.021162  0.984808 -0.172354  -0.992546  0.000000  0.121869  ]>
-                <[string8][InputTransform][BannerHookTranslation.Output]>
-                <[vector3_float64][Direction][ -0.9944026 0.01480581 0.1046144 ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Controls.BannerHookRelease]>
-                    <[string8][Qualifiers][event]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.006]>
-                <[float64][Length][0.06]>
-            >
-            <[control_cylinder][BannerHookReleaseBase][]
-                <[string8][Type][button base]>
-                <[vector3_float64][R0][ 0.654 0.4280653 0.538 ]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Controls.BannerHookRelease]>
-                    <[string8][Qualifiers][event]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.016]>
-                <[float64][Length][0.002]>
-            >
-
-            // switching panel
-            <[control_cylinder][LeftLandingLightSwitch][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][ 0.63847 0.43295 0.46656]>
-                <[matrix3_float64][B0][0.931564 0 -0.363576 0 1 0 0.363576 0 0.931564]>
-                <[vector3_float64][Direction][0.931564 0 -0.363576]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Controls.Lighting.Landing.Left]>
-                    <[string8][Qualifiers][value]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.004]>
-                <[float64][Length][0.003]>
-            >
-            <[control_cylinder][LeftLandingLightSwitchLower][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][0.6337159 0.43415 0.4470407]>
-                <[matrix3_float64][B0][0.931564 0 -0.363576 0 1 0 0.363576 0 0.931564]>
-                <[vector3_float64][Direction][0.931564 0 -0.363576]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Controls.Lighting.Landing.Left]>
-                    <[string8][Qualifiers][value]>
-                    <[float64][Value][0.0]>
-                >
-                <[float64][Radius][0.003]>
-                <[float64][Length][0.003]>
-            >
-            <[control_cylinder][RightLandingLightSwitch][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][ 0.63847 0.41287 0.46656 ]>
-                <[matrix3_float64][B0][0.931564 0 -0.363576 0 1 0 0.363576 0 0.931564]>
-                <[vector3_float64][Direction][0.931564 0 -0.363576]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Controls.Lighting.Landing.Right]>
-                    <[string8][Qualifiers][value]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.004]>
-                <[float64][Length][0.003]>
-            >
-            <[control_cylinder][RightLandingLightSwitchLower][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][0.6337159 0.41315 0.4470407]>
-                <[matrix3_float64][B0][0.931564 0 -0.363576 0 1 0 0.363576 0 0.931564]>
-                <[vector3_float64][Direction][0.931564 0 -0.363576]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Controls.Lighting.Landing.Right]>
-                    <[string8][Qualifiers][value]>
-                    <[float64][Value][0.0]>
-                >
-                <[float64][Radius][0.003]>
-                <[float64][Length][0.003]>
-            >
-
-            <[control_input][MagnetosInput][]
-                <[uint32][InputID][Magnetos.Output]>
-            >
-            <[control_product][MagnetosAngle][]
-                <[uint32][Inputs][ MagnetosInput.Output 0.53 ]>
-            >
-            <[control_rotation][MagnetosRotation][]
-                <[string8][Input][MagnetosAngle.Output]>
-                <[tmvector3d][Axis][ 0.913545 0.0 -0.406737 ]>
-                <[tmvector3d][Pivot][0.6243509 0.254497 0.4665433]>
-            >
-            <[control_cylinder][Magnetos][]
-                <[string8][Type][knob]>
-                <[vector3_float64][R0][ 0.6182996 0.2558335 0.4704494 ]>
-                <[matrix3_float64][B0][ 0.311578 -0.642788  0.699816   0.261445  0.766044  0.587216  -0.913545  0.000000  0.406737  ]>
-                <[vector3_float64][Direction][ 0.913545 0.0 -0.406737 ]>
-                <[string8][InputTransform][MagnetosRotation.Output]>
-                <[float64][StepAngle][0.4]>
-                <[control_message][OnRotate][]
-                    <[string8][Message][Controls.Magnetos1]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.012]>
-                <[float64][Length][0.002]>
-            >
-            <[control_cylinder][Magnetos Base][]
-                <[string8][Type][knob base]>
-                <[vector3_float64][R0][ 0.6368653 0.2546709 0.4616407 ]>
-                <[matrix3_float64][B0][ 0.913545 0.0 -0.406737  0.0 1.0 0.0  0.406737 0.0 0.913545 ]>
-                <[vector3_float64][Direction][ 0.913545 0.0 -0.406737 ]>
-                <[float64][StepAngle][0.4]>
-                <[control_message][OnRotate][]
-                    <[string8][Message][Controls.Magnetos1]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][1.0]>
-                >
-                <[control_message][OnPush][]
-                    <[string8][Message][Controls.Magnetos1]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.012]>
-                <[float64][Length][0.007]>
-            >
-            <[control_cylinder][StarterButton][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][0.6390602 0.2113978 0.4628176]>
-                <[matrix3_float64][B0][ 0.913545 0.0 -0.406737  0.0 1.0 0.0  0.406737 0.0 0.913545 ]>
-                <[vector3_float64][Direction][ 0.913545 0.0 -0.406737 ]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Controls.Starter1]>
-                    <[string8][Qualifiers][event]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.006]>
-                <[float64][Length][0.004]>
-            >
-            <[control_cylinder][MasterBattery][]
-                <[string8][Type][switch toggle]>
-                <[vector3_float64][R0][0.6259302 0.1602378 0.4685]>
-                <[matrix3_float64][B0][ 0.913545 0.0 -0.406737  0.0 1.0 0.0  0.406737 0.0 0.913545 ]>
-                <[vector3_float64][Direction][ 0.913545 0.0 -0.406737 ]>
-                <[float64][StepDistance][0.01]>
-                <[control_message][OnStep][]
-                    <[string8][Message][Controls.MasterBattery]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.012]>
-                <[float64][Length][0.01]>
-            >
-            <[control_cylinder][AlternatorSwitch][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][0.639 0.126 0.4675]>
-                <[matrix3_float64][B0][0.931564 0 -0.363576 0 1 0 0.363576 0 0.931564]>
-                <[vector3_float64][Direction][0.931564 0 -0.363576]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Controls.Alternator]>
-                    <[string8][Qualifiers][value]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.004]>
-                <[float64][Length][0.005]>
-            >
-            <[control_cylinder][AlternatorSwitchLower][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][0.63371591 0.1255 0.4470407]>
-                <[matrix3_float64][B0][0.931564 0 -0.363576 0 1 0 0.363576 0 0.931564]>
-                <[vector3_float64][Direction][0.931564 0 -0.363576]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Controls.Alternator]>
-                    <[string8][Qualifiers][value]>
-                    <[float64][Value][0.0]>
-                >
-                <[float64][Radius][0.003]>
-                <[float64][Length][0.003]>
-            >
-            <[control_input][MixtureLeverInput][]
-                <[uint32][InputID][MixtureLever.Output]>
-                <[float64][Scaling][0.035]>
-            >
-            <[control_sum][MixtureLeverOffset][]
-                <[uint32][Inputs][MixtureLeverInput.Output -0.035]>
-            >
-            <[control_translation][MixtureLeverTranslation][]
-                <[string8][Input][MixtureLeverOffset.Output]>
-                <[tmvector3d][Axis][0.911300 0.0 -0.411700]>
-            >
-            <[control_cylinder][MixtureLever][]
-                <[string8][Type][lever]>
-                <[vector3_float64][R0][0.623 0.09424502 0.4695]>
-                <[matrix3_float64][B0][ 0.913545 0.0 -0.406737  0.0 1.0 0.0  0.406737 0.0 0.913545 ]>
-                <[vector3_float64][Direction][0.913545 0.0 -0.406737]>
-                <[string8][InputTransform][MixtureLeverTranslation.Output]>
-                <[float64][StepDistance][0.002]>
-                <[control_message][OnStep][]
-                    <[string8][Message][Controls.Mixture1]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.012]>
-                <[float64][Length][0.01]>
-            >
-            <[control_input][HeaterLeverInput][]
-                <[uint32][InputID][HeaterLever.Output]>
-                <[float64][Scaling][0.035]>
-            >
-            <[control_translation][HeaterLeverTranslation][]
-                <[string8][Input][HeaterLeverInput.Output]>
-                <[tmvector3d][Axis][-0.911300 0.0 0.411700]>
-            >
-            <[control_cylinder][HeaterLever][]
-                <[string8][Type][lever]>
-                <[vector3_float64][R0][0.623 0.04033437 0.465]>
-                <[matrix3_float64][B0][ 0.913545 0.0 -0.406737  0.0 1.0 0.0  0.406737 0.0 0.913545 ]>
-                <[vector3_float64][Direction][0.913545 0.0 -0.406737]>
-                <[string8][InputTransform][HeaterLeverTranslation.Output]>
-                <[float64][StepDistance][0.002]>
-                <[control_message][OnStep][]
-                    <[string8][Message][AirConditioning.Heater]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][-1.0]>
-                >
-                <[float64][Radius][0.013]>
-                <[float64][Length][0.01]>
-            >
-            <[control_input][HeaterLeverBackFrontInput][]
-                <[uint32][InputID][HeaterLeverBackFront.Output]>
-                <[float64][Scaling][0.035]>
-            >
-            <[control_translation][HeaterLeverBackFrontTranslation][]
-                <[string8][Input][HeaterLeverBackFrontInput.Output]>
-                <[tmvector3d][Axis][-0.911300 0.0 0.411700]>
-            >
-            <[control_cylinder][HeaterFrontRear][]
-                <[string8][Type][lever]>
-                <[vector3_float64][R0][0.623 -0.005968137 0.465]>
-                <[matrix3_float64][B0][ 0.913545 0.0 -0.406737  0.0 1.0 0.0  0.406737 0.0 0.913545 ]>
-                <[vector3_float64][Direction][0.913545 0.0 -0.406737]>
-                <[string8][InputTransform][HeaterLeverBackFrontTranslation.Output]>
-                <[float64][StepDistance][0.002]>
-                <[control_message][OnStep][]
-                    <[string8][Message][AirConditioning.HeaterBackFront]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][-1.0]>
-                >
-                <[float64][Radius][0.013]>
-                <[float64][Length][0.01]>
-            >
-            <[control_input][DefrostLeverInput][]
-                <[uint32][InputID][DefrostLever.Output]>
-                <[float64][Scaling][0.035]>
-            >
-            <[control_translation][DefrostLeverTranslation][]
-                <[string8][Input][DefrostLeverInput.Output]>
-                <[tmvector3d][Axis][-0.911300 0.0 0.411700]>
-            >
-            <[control_cylinder][DefrostLever][]
-                <[string8][Type][lever]>
-                <[vector3_float64][R0][0.623 -0.05247607 0.465]>
-                <[matrix3_float64][B0][ 0.913545 0.0 -0.406737  0.0 1.0 0.0  0.406737 0.0 0.913545 ]>
-                <[vector3_float64][Direction][0.913545 0.0 -0.406737]>
-                <[string8][InputTransform][DefrostLeverTranslation.Output]>
-                <[float64][StepDistance][0.002]>
-                <[control_message][OnStep][]
-                    <[string8][Message][AirConditioning.Defrost]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][-1.0]>
-                >
-                <[float64][Radius][0.013]>
-                <[float64][Length][0.01]>
-            >
-            <[control_input][CarburettorHeatLeverInput][]
-                <[uint32][InputID][CarburettorHeatLever.Output]>
-                <[float64][Scaling][0.035]>
-            >
-            <[control_translation][CarburettorHeatLeverTranslation][]
-                <[string8][Input][CarburettorHeatLeverInput.Output]>
-                <[tmvector3d][Axis][-0.911300 0.0 0.411700]>
-            >
-            <[control_cylinder][CarbHeat][]
-                <[string8][Type][lever]>
-                <[vector3_float64][R0][0.623 -0.1064333 0.467]>
-                <[matrix3_float64][B0][ 0.913545 0.0 -0.406737  0.0 1.0 0.0  0.406737 0.0 0.913545 ]>
-                <[vector3_float64][Direction][0.913545 0.0 -0.406737]>
-                <[string8][InputTransform][CarburettorHeatLeverTranslation.Output]>
-                <[float64][StepDistance][0.002]>
-                <[control_message][OnStep][]
-                    <[string8][Message][AntiIce.CarburettorHeat]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][-1.0]>
-                >
-                <[float64][Radius][0.015]>
-                <[float64][Length][0.01]>
-            >
-            <[control_cylinder][FuelPumpSwitch][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][ 0.63893 -0.13923 0.4668 ]>
-                <[matrix3_float64][B0][0.931564 0 -0.363576 0 1 0 0.363576 0 0.931564]>
-                <[vector3_float64][Direction][0.931564 0 -0.363576]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Controls.FuelPump]>
-                    <[string8][Qualifiers][value]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.004]>
-                <[float64][Length][0.003]>
-            >
-            <[control_cylinder][FuelPumpSwitchLower][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][0.63371591 -0.139 0.446]>
-                <[matrix3_float64][B0][0.931564 0 -0.363576 0 1 0 0.363576 0 0.931564]>
-                <[vector3_float64][Direction][0.931564 0 -0.363576]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Controls.FuelPump]>
-                    <[string8][Qualifiers][value]>
-                    <[float64][Value][0.0]>
-                >
-                <[float64][Radius][0.003]>
-                <[float64][Length][0.003]>
-            >
-            <[control_cylinder][NavigationLightSwitch][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][ 0.63881 -0.22828 0.46717 ]>
-                <[matrix3_float64][B0][0.931564 0 -0.363576 0 1 0 0.363576 0 0.931564]>
-                <[vector3_float64][Direction][0.931564 0 -0.363576]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Controls.Lighting.Navigation]>
-                    <[string8][Qualifiers][value]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.004]>
-                <[float64][Length][0.003]>
-            >
-            <[control_cylinder][NavigationLightSwitchLower][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][0.63371591 -0.2285 0.4470407]>
-                <[matrix3_float64][B0][0.931564 0 -0.363576 0 1 0 0.363576 0 0.931564]>
-                <[vector3_float64][Direction][0.931564 0 -0.363576]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Controls.Lighting.Navigation]>
-                    <[string8][Qualifiers][value]>
-                    <[float64][Value][0.0]>
-                >
-                <[float64][Radius][0.003]>
-                <[float64][Length][0.003]>
-            >
-            <[control_cylinder][RotatingBeaconLightSwitch][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][ 0.63881 -0.24791 0.46717 ]>
-                <[matrix3_float64][B0][0.931564 0 -0.363576 0 1 0 0.363576 0 0.931564]>
-                <[vector3_float64][Direction][0.931564 0 -0.363576]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Controls.Lighting.Beacon]>
-                    <[string8][Qualifiers][value]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.004]>
-                <[float64][Length][0.003]>
-            >
-            <[control_cylinder][RotatingBeaconLightSwitchLower][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][0.63371591 -0.2485 0.4470407]>
-                <[matrix3_float64][B0][0.931564 0 -0.363576 0 1 0 0.363576 0 0.931564]>
-                <[vector3_float64][Direction][0.931564 0 -0.363576]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Controls.Lighting.Beacon]>
-                    <[string8][Qualifiers][value]>
-                    <[float64][Value][0.0]>
-                >
-                <[float64][Radius][0.003]>
-                <[float64][Length][0.003]>
-            >
-
-            // center console
-            <[control_input][BrakeHandleInput][]
-                <[uint32][InputID][BrakeHandlePulled.Output]>
-                <[float64][Scaling][0.07]>
-            >
-            <[control_sum][BrakeHandleShift][]
-                <[string8][Inputs][BrakeHandleInput.Output 0.01]>
-            >
-            <[control_translation][BrakeHandleTranslation][]
-                <[string8][Input][BrakeHandleShift.Output]>
-                <[vector3_float64][Axis][ -0.9011037 0.0 0.4336036 ]>
-            >
-            <[control_input][BrakeHandleRotationInput][]
-                <[uint32][InputID][BrakeHandleRotated.Output]>
-                <[float64][Scaling][2.1]>
-            >
-            <[control_rotation][BrakeHandleRotation][]
-                <[string8][Input][BrakeHandleRotationInput.Output]>
-                <[tmvector3d][Axis][ 0.9011037 0.0 -0.4336036 ]>
-                <[tmvector3d][Pivot][ 0.672161 -0.009265541 0.316763 ]>
-                <[string8][InputTransform][BrakeHandleTranslation.Output]>
-            >
-            <[control_cylinder][ParkBrake][]
-                <[string8][Type][lever toggle]>
-                <[vector3_float64][R0][ 0.5695525 -0.009265548 0.3661373 ]>
-                <[matrix3_float64][B0][-0.178606  0.906308 -0.383022  -0.906308 0.000000  0.422618   0.383022  0.422618  0.821394  ]>
-                <[vector3_float64][Direction][ 0.9011037 0.0 -0.4336036 ]>
-                <[float64][StepDistance][0.006]>
-                <[string8][InputTransform][BrakeHandleRotation.Output]>
-                <[control_message][OnStep][]
-                    <[string8][Message][Controls.ParkingBrake]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][-0.1]>
-                >
-                <[float64][Radius][0.007]>
-                <[float64][Length][0.07]>
-            >
-            <[control_cylinder][ParkBrakeBase][]
-                <[string8][Type][lever toggle base]>
-                <[vector3_float64][R0][ 0.60 -0.009 0.351 ]>
-                <[matrix3_float64][B0][-0.178606  0.906308 -0.383022  -0.906308 0.000000  0.422618   0.383022  0.422618  0.821394  ]>
-                <[matrix3_float64][B0][0.9011037 0.0 -0.4336036  0.0 1.0 0.0  0.4336036 0.0 0.9011037 ]>
-                <[control_message][OnStep][]
-                    <[string8][Message][Controls.ParkingBrake]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][-0.1]>
-                >
-                <[float64][Radius][0.02]>
-                <[float64][Length][0.002]>
-            >
-            <[control_input][FuelSelectorInput][]
-                <[uint32][InputID][FuelSelector.Output]>
-                <[float64][Scaling][1.57]>
-            >
-            <[control_rotation][FuelSelectorRotation][]
-                <[string8][Input][FuelSelectorInput.Output]>
-                <[tmvector3d][Axis][ -0.2106789 0.0 0.9775553]>
-                <[tmvector3d][Pivot][0.5175686 -0.005531952 0.2814177]>
-            >
-            <[control_box][FuelSelector][]
-                <[string8][Type][knob toggle]>
-                <[vector3_float64][R0][ 0.516 -0.003 0.2747 ]>
-                <[matrix3_float64][B0][ 0.224951  0.000000 -0.974370   0.712609  0.681998  0.164519   0.664519 -0.731354  0.153416  ]>
-                <[vector3_float64][Direction][0.224951  0.000000 -0.974370]>
-                <[float64][StepAngle][0.8]>
-                <[string8][InputTransform][FuelSelectorRotation.Output]>
-                <[control_message][OnRotate][]
-                    <[string8][Message][Controls.FuelSelector]>
-                    <[string8][Qualifiers][value]>
-                    <[float64][Value][-1.0]>
-                >
-                <[vector3_float64][Dimensions][0.01 0.02 0.05]>
-            >
-            <[control_cylinder][FuelSelectorBase][]
-                <[string8][Type][knob toggle base]>
-                <[vector3_float64][R0][ 0.52 -0.005 0.268 ]>
-                <[matrix3_float64][B0][ 0.224951  0.000000 -0.974370   0.712609  0.681998  0.164519   0.664519 -0.731354  0.153416  ]>
-                <[control_message][OnRotate][]
-                    <[string8][Message][Controls.FuelSelector]>
-                    <[string8][Qualifiers][value]>
-                    <[float64][Value][-1.0]>
+                    <[float64][Value][0.0004]>
                 >
                 <[float64][Radius][0.03]>
-                <[float64][Length][0.002]>
+                <[float64][Length][0.165]>
             >
-            <[control_cylinder][TrimWheel][]
-                <[string8][Type][wheel]>
-                <[vector3_float64][R0][0.4265 -0.006 0.2055]>
-                <[matrix3_float64][B0][ 0.0 -1.0 0.0  1.0 0.0 0.0  0.0 0.0 1.0 ]>
+            <[control_rotation][ElevatorCopilotTransform][]
+                <[string8][Input][StickElevator.Output]>
+                <[tmvector3d][Axis][0.0 1.0 0.0]>
+                <[tmvector3d][Pivot][-0.356420 0.0 -0.491160]>
+            >
+            <[control_rotation][StickCopilotTransform][]
+                <[string8][Input][StickAileron.Output]>
+                <[tmvector3d][Axis][1.0 0.0 0.0]>
+                <[tmvector3d][Pivot][-0.356420 0.0 -0.491160]>
+                <[string8][InputTransform][ElevatorCopilotTransform.Output]>
+            >
+            <[control_cylinder][StickCopilotGrip][114]
+                <[string8][Type][stick]>
+                <[vector3_float64][R0][ -0.3952 0.0 -0.01411 ]>
+                <[matrix3_float64][B0][ 0.0 0.0 1.0  0.0 1.0 0.0  -1.0 0.0 0.0 ]>
                 <[vector3_float64][Direction][ 1.0 0.0 0.0 ]>
-                <[float64][StepDistance][0.01]>
-                <[control_message][OnStep][]
-                    <[string8][Message][Controls.Trim]>
+                <[vector3_float64][Direction2][ 0.0 -1.0 0.0 ]>
+                <[float64][StepDistance][0.00005]>
+                <[string8][InputTransform][StickCopilotTransform.Output]>
+                <[control_message][OnRotate][]
+                    <[string8][Message][Controls.Roll.Input]>
                     <[string8][Qualifiers][step]>
-                    <[float64][Value][1.0]>
+                    <[float64][Value][15.0]>
                 >
-                <[float64][Radius][0.05]>
-                <[float64][Length][0.02]>
+                <[control_message][OnStep][]
+                    <[string8][Message][Controls.Pitch.Input]>
+                    <[string8][Qualifiers][step]>
+                    <[float64][Value][0.0004]>
+                >
+                <[float64][Radius][0.03]>
+                <[float64][Length][0.165]>
             >
-
-            <[control_input][InputFlaps][]
-                <[uint32][InputID][ServoFlaps.Output]>
+			// flaps
+            <[control_input][FlapsLeverAngle][]
+                <[uint32][InputID][FlapsPosition.Output]>
+                <[float64][Offset][0.785400]>
+                <[float64][Scaling][-0.69813]>
             >
-            <[control_product][FlapsTravel][]
-                <[uint32][Inputs][InputFlaps.Output 0.8]>
-            >
-            <[control_rotation][FlapsTransform][]
-                <[string8][Input][FlapsTravel.Output]>
-                <[tmvector3d][Axis][ 0.0 -1.0 0.0 ]>
-                <[tmvector3d][Pivot][-0.103270 0.0 0.118080]>
-            >
-            <[control_cylinder][FlapLever][]
+            <[control_rotation][FlapsLeverTransform][]
+                <[string8][Input][FlapsLeverAngle.Output]>
+                <[tmvector3d][Axis][0.0 -1.0 0.0]>
+                <[tmvector3d][Pivot][-0.058890 0.226330 0.741300]>
+            >		
+            <[control_cylinder][FlapsLever][]
                 <[string8][Type][lever]>
-                <[vector3_float64][R0][0.25 -0.00523 0.212]>
-                <[matrix3_float64][B0][ 0.965926  0.000000  0.258819  0.000000  1.000000  0.000000 -0.258819  0.000000  0.965926 ]>
-                <[string8][InputTransform][FlapsTransform.Output]>
-                <[vector3_float64][Direction][0.258819  0.000000 -0.965926]>
-                <[float64][StepDistance][0.06]>
+                <[vector3_float64][R0][ -0.04638 0.2282 0.5254 ]>
+                <[matrix3_float64][B0][ 0.0 0.0 1.0  0.0 1.0 0.0  -1.0 0.0 0.0 ]>
+                <[vector3_float64][Direction][ -1.0 0.0 0.0 ]>				
+                <[vector3_float64][Direction2][ 0.0 -1.0 0.0 ]>
+                <[float64][StepDistance][0.001]>
+                <[string8][InputTransform][FlapsLeverTransform.Output]>
                 <[control_message][OnStep][]
                     <[string8][Message][Controls.Flaps]>
                     <[string8][Qualifiers][step]>
-                    <[float64][Value][-1.0]>
+                    <[float64][Value][0.01779]>
                 >
-                <[float64][Radius][0.018]>
-                <[float64][Length][0.11]>
+                <[float64][Radius][0.015]>
+                <[float64][Length][0.25]>
             >
-            <[control_cylinder][FlapLeverButton][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][ 0.3063 -0.00523 0.2275 ]>
-                <[matrix3_float64][B0][ 0.965926  0.000000  0.258819  0.000000  1.000000  0.000000 -0.258819  0.000000  0.965926 ]>
-                <[string8][InputTransform][FlapsTransform.Output]>
-                <[vector3_float64][Direction][-0.965926 0.0 -0.258819]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Controls.FlapsRelease]>
-                    <[string8][Qualifiers][event]>
+            <[control_box][FlapsLeverBase][14]
+                <[string8][Type][lever]>
+                <[vector3_float64][R0][ -0.04257 0.2263 0.7207 ]>
+                <[matrix3_float64][B0][ 1.0 0.0 0.0  0.0 1.0 0.0  0.0 0.0 1.0 ]>
+                <[vector3_float64][Direction][ 1.0 0.0 0.0 ]>
+                <[float64][StepDistance][0.001]>
+                <[control_message][OnStep][]
+                    <[string8][Message][Controls.Flaps]>
+                    <[string8][Qualifiers][step]>
+                    <[float64][Value][0.01]>
+                >
+                <[vector3_float64][Dimensions][ 0.1 0.015 0.003 ]>
+            >
+            // throttle
+            <[control_input][PilotThrottleLeverAngle][]
+                <[uint32][InputID][ThrottleLever.Output]>
+                <[float64][Offset][0.698130]>
+                <[float64][Scaling][-1.309]>
+            >
+            <[control_rotation][PilotThrottleLeverTransform][]
+                <[string8][Input][PilotThrottleLeverAngle.Output]>
+                <[tmvector3d][Axis][0.0 -1.0 0.0]>
+                <[tmvector3d][Pivot][0.208760 0.325350 0.132080]>
+            >
+            <[control_sphere][PilotThrottle][]
+                <[string8][Type][lever]>
+                <[vector3_float64][R0][ 0.2088 0.3121 0.1795 ]>
+                <[matrix3_float64][B0][ 1.0 0.0 0.0  0.0 1.0 0.0  0.0 0.0 1.0 ]>
+                <[vector3_float64][Direction][ 1.0 0.0 0.0 ]>
+                <[float64][StepDistance][0.001]>
+                <[string8][InputTransform][PilotThrottleLeverTransform.Output]>
+                <[control_message][OnStep][]
+                    <[string8][Message][Controls.Throttle1]>
+                    <[string8][Qualifiers][step]>
+                    <[float64][Value][0.01779]>
+                >
+                <[float64][Radius][0.02]>
+            >
+            <[control_box][PilotThrottleBase][14]
+                <[string8][Type][lever]>
+                <[vector3_float64][R0][ 0.2088 0.3253 0.1321 ]>
+                <[matrix3_float64][B0][ 1.0 0.0 0.0  0.0 1.0 0.0  0.0 0.0 1.0 ]>
+                <[vector3_float64][Direction][ 1.0 0.0 0.0 ]>
+                <[float64][StepDistance][0.001]>
+                <[control_message][OnStep][]
+                    <[string8][Message][Controls.Throttle1]>
+                    <[string8][Qualifiers][step]>
+                    <[float64][Value][0.01]>
+                >
+                <[vector3_float64][Dimensions][ 0.1 0.015 0.003 ]>
+            >			
+            // propeller speed
+            <[control_input][PropellerRotationAngle][]
+                <[uint32][InputID][PropellerRotationAngle.Output]>
+            >
+            <[control_input][PropellerCannotBeGrabbed][]
+                <[uint32][InputID][PropellerCannotBeGrabbed.Output]>
+                <[float64][Scaling][10000.0]>
+            >
+            <[control_translation][PropellerShift][]
+                <[string8][Input][PropellerCannotBeGrabbed.Output]>
+                <[tmvector3d][Axis][ 1.0 0.0 0.0 ]>
+            >
+            <[control_rotation][PropellerTransform][]
+                <[string8][Input][PropellerRotationAngle.Output]>
+                <[tmvector3d][Axis][ 1.0 0.0 0.0 ]>
+                <[tmvector3d][Pivot][ 1.770502 0.025350 -0.404400 ]>
+                <[string8][InputTransform][PropellerShift.Output]>
+            >
+            <[control_cylinder][PropellerBlade0][20]
+                <[string8][Type][lever]>
+                <[vector3_float64][R0][ 0.2085 0.3050 0.1653 ]>
+                <[matrix3_float64][B0][ 0.0 1.0 0.0  1.0 0.0 0.0  0.0 0.0 -1.0 ]>
+                <[vector3_float64][Direction][ 0.0 0.0 -1.0 ]>
+                <[float64][StepDistance][0.001]>
+                <[string8][InputTransform][PropellerTransform.Output]>
+                <[control_message][OnStep][]
+                    <[string8][Message][Controls.EngineStart]>
+                    <[string8][Qualifiers][value active]>
+                    <[float64][Value][1.0]>
+                >
+                <[float64][Radius][0.05]>
+                <[float64][Length][0.8]>
+            >
+			// fuel selector
+            <[control_cylinder][FuelSelectorHandle][11]
+                <[string8][Type][knob toggle]>
+                <[vector3_float64][R0][ 0.1458 0.2988 -0.03363 ]>
+                <[matrix3_float64][B0][ 0.0 0.0 -1.0  0.0 1.0 0.0  1.0 0.0 0.0 ]>
+                <[vector3_float64][Direction][ 0.0 1.0 0.0 ]>
+                <[float64][StepDistance][0.1]>
+                <[control_message][OnStep][]
+                    <[string8][Message][Controls.FuelSelector]>
+                    <[string8][Qualifiers][step]>
                     <[float64][Value][1.0]>
                 >
                 <[float64][Radius][0.01]>
-                <[float64][Length][0.006]>
+                <[float64][Length][0.03]>
             >
-
-            <[control_input][ThrottleInput][]
-                <[uint32][InputID][ServoThrottle.Output]>
-                <[string8][Scaling][0.038]>
-            >
-            <[control_sum][ThrottleShift][]
-                <[string8][Inputs][ThrottleInput.Output 0.01]>
-            >
-            <[control_translation][ThrottleTranslation][]
-                <[string8][Input][ThrottleShift.Output]>
-                <[vector3_float64][Axis][ 0.9977 0.0 -0.0682 ]>
-            >
-            <[control_cylinder][ThrottleKnobRight][]
-                <[string8][Type][lever]>
-                <[vector3_float64][R0][ 0.5716543 0.01118723 0.625739 ]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[float64][StepDistance][0.00054]>
-                <[string8][InputTransform][ThrottleTranslation.Output]>
-                <[control_message][OnStep][]
-                    <[string8][Message][Controls.Throttle1]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][0.01]>
-                >
-                <[float64][Radius][0.018]>
-                <[float64][Length][0.039]>
-            >
-            <[control_cylinder][ThrottleKnobLeft][]
-                <[string8][Type][lever]>
-                <[vector3_float64][R0][ 0.5716965 0.3952641 0.6263577 ]>
-                <[matrix3_float64][B0][ 0.995227  0.000000 -0.097583   0.000000  1.000000  0.000000   0.097583  0.000000  0.995227  ]>
-                <[vector3_float64][Direction][0.9953 0.0000 -0.0971 ]>
-                <[float64][StepDistance][0.00054]>
-                <[string8][InputTransform][ThrottleTranslation.Output]>
-                <[control_message][OnStep][]
-                    <[string8][Message][Controls.Throttle1]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][0.01]>
-                >
-                <[float64][Radius][0.018]>
-                <[float64][Length][0.039]>
-            >
-
-            // overhead
-            <[control_input][CanopyInput][]
-                <[uint32][InputID][CanopySequence.Output]>
-            >
-            <[control_product][CanopyTravel][]
-                <[uint32][Inputs][CanopyInput.Output 0.7]>
-            >
-            <[control_translation][CanopyTranslation][]
-                <[string8][Input][CanopyTravel.Output]>
-                <[tmvector3d][Axis][1.0 0.0 0.0]>
-            >
-            <[control_box][CanopyHandleNormal][]
-                <[string8][Type][switch toggle]>
-                <[vector3_float64][R0][-0.129 -0.003156313 1.135]>
-                <[matrix3_float64][B0][ 1.0 0.0 0.0  0.0 1.0 0.0  0.0 0.0 1.0 ]>
-                <[string8][InputTransform][CanopyTranslation.Output]>
-                <[vector3_float64][Direction][ 1.0 0.0 0.0 ]>
-                <[control_message][OnStep][]
-                    <[string8][Message][Controls.Canopy]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][1.0]>
-                >
-                <[vector3_float64][Dimensions][0.07 0.03 0.03]>
-            >
-
-            <[control_input][ElevatorTravel][]
-                <[uint32][InputID][ServoElevator.Output]>
-                <[float64][Scaling][1.5]>
-            >
-            <[control_input][AileronTravel][]
-                <[uint32][InputID][ServoStickAileron.Output]>
-                <[float64][Scaling][0.15]>
-            >
-            <[control_rotation][ElevatorTransform][]
-                <[string8][Input][ElevatorTravel.Output]>
-                <[tmvector3d][Axis][0.0 1.0 0.0]>
-                <[tmvector3d][Pivot][0.369820 0.0 0.0224500]>
-            >
-            <[control_rotation][StickTransform][]
-                <[string8][Input][AileronTravel.Output]>
-                <[tmvector3d][Axis][ 1.0 0.0 0.0]>
-                <[tmvector3d][Pivot][0.369820 0.0 0.0224500]>
-                <[string8][InputTransform][ElevatorTransform.Output]>
-            >
-            <[control_cylinder][StickGrip][]
-                <[string8][Type][stick]>
-                <[vector3_float64][R0][0.413 0.263 0.51]>
-                <[matrix3_float64][B0][ 0.000000  0.000000  1.000000  0.000000  1.000000  0.000000 -1.000000  0.000000 0.000000 ]>
-                <[vector3_float64][Direction][ 1.0  0.0 0.0 ]>
-                <[vector3_float64][Direction2][ 0.0 -1.0 0.0 ]>
-                <[float64][StepDistance][0.00005]>
-                <[string8][InputTransform][StickTransform.Output]>
-                <[control_message][OnStep][]
-                    <[string8][Message][Controls.Pitch.Input]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][0.0004]>
-                >
+            <[control_cylinder][FuelSelectorBase][11]
+                <[string8][Type][knob toggle]>
+                <[vector3_float64][R0][ 0.1387 0.3035 -0.03302 ]>
+                <[matrix3_float64][B0][ 0.0 1.0 0.0  0.0 0.0 1.0  1.0 0.0 0.0 ]>
+                <[vector3_float64][Direction][ 0.0 1.0 0.0 ]>
+                <[float64][StepAngle][0.5]>
                 <[control_message][OnRotate][]
-                    <[string8][Message][Controls.Roll.Input]>
+                    <[string8][Message][Controls.FuelSelector]>
                     <[string8][Qualifiers][step]>
-                    <[float64][Value][15.0]>
-                >
-                <[float64][Radius][0.018]>
-                <[float64][Length][0.135]>
-            >
-            <[control_cylinder][StickGripCopilot][]
-                <[string8][Type][stick]>
-                <[vector3_float64][R0][0.413 -0.263 0.51]>
-                <[matrix3_float64][B0][ 0.000000  0.000000  1.000000  0.000000  1.000000  0.000000 -1.000000  0.000000 0.000000 ]>
-                <[vector3_float64][Direction][ 1.0  0.0 0.0 ]>
-                <[vector3_float64][Direction2][ 0.0 -1.0 0.0 ]>
-                <[string8][InputTransform][StickTransform.Output]>
-                <[float64][StepDistance][0.00005]>
-                <[control_message][OnStep][]
-                    <[string8][Message][Controls.Pitch.Input]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][0.0004]>
-                >
-                <[control_message][OnRotate][]
-                    <[string8][Message][Controls.Roll.Input]>
-                    <[string8][Qualifiers][step]>
-                    <[float64][Value][15.0]>
-                >
-                <[float64][Radius][0.018]>
-                <[float64][Length][0.135]>
-            >
-            <[control_cylinder][PushToTalkLeft][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][ 0.41164 0.26226 0.5875 ]>
-                <[matrix3_float64][B0][ -0.06430271 0.0 0.9979283  0.000000  1.000000  0.000000 -0.9979283 0.0 -0.06430271 ]>
-                <[string8][InputTransform][StickTransform.Output]>
-                <[vector3_float64][Direction][-0.06430271 0.0 0.9979283]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Communication.PushToTalkLeft]>
-                    <[string8][Qualifiers][event]>
                     <[float64][Value][1.0]>
                 >
-                <[float64][Radius][0.0055]>
-                <[float64][Length][0.005]>
-            >
-            <[control_cylinder][PushToTalkRight][]
-                <[string8][Type][button]>
-                <[vector3_float64][R0][ 0.41164 -0.26251 0.5875 ]>
-                <[matrix3_float64][B0][ -0.06430271 0.0 0.9979283  0.000000  1.000000  0.000000 -0.9979283 0.0 -0.06430271 ]>
-                <[string8][InputTransform][StickTransform.Output]>
-                <[vector3_float64][Direction][-0.06430271 0.0 0.9979283]>
-                <[control_message][OnPush][]
-                    <[string8][Message][Communication.PushToTalkRight]>
-                    <[string8][Qualifiers][event]>
-                    <[float64][Value][1.0]>
-                >
-                <[float64][Radius][0.0055]>
-                <[float64][Length][0.005]>
-            >
+                <[float64][Radius][0.11]>
+                <[float64][Length][0.01]>
+            >			
         >
     >
 >

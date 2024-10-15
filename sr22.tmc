@@ -8,11 +8,11 @@
         <[localized_text_list][Descriptions][]
           <[localized_text][][]
             <[string8][Language][en]>
-            <[string8][Text][The Cirrus SR22 is a single-engine four- or five-seat composite aircraft built from 2001 by Cirrus Aircraft of Duluth, Minnesota.Made by Krzysztof Kaniewski. 3D model: RigModels.com.]>
+            <[string8][Text][The Cirrus SR22 is a single-engine four- or five-seat composite aircraft built from 2001 by Cirrus Aircraft of Duluth, Minnesota. For Aerofly FS4 made by Krzysztof Kaniewski. Original 3D model comes from RigModels.com.]>
           >
           <[localized_text][][]
             <[string8][Language][de]>
-            <[string8][Text][Die Cirrus SR22 ist ein in Holzbauweise hergestellter einmotoriger Tiefdecker.Hergestellt von Krzysztof Kaniewski. 3D-Modell: RigModels.com.]>
+            <[string8][Text][Die Cirrus SR22 ist ein einmotoriges Flugzeug aus Verbundwerkstoffen mit vier oder fünf Sitzen, das seit 2001 von Cirrus Aircraft in Duluth, Minnesota, gebaut wird. Für Aerofly FS4 erstellt von Krzysztof Kaniewski. Das ursprüngliche 3D-Modell stammt von RigModels.com.]>
           >
         >
         <[float64][MaximumTakeoffMass][1633]>
@@ -38,23 +38,23 @@
     >
 >
 
-General characteristics
+// General characteristics
 
-Crew: one
-Capacity: four passengers
-Length: 26 ft 0 in (7.92 m)
-Wingspan: 38 ft 4 in (11.68 m)
-Height: 8 ft 11 in (2.72 m)
-Airfoil: Roncz
-Empty weight: 2,269 lb (1,029 kg)
-Gross weight: 3,600 lb (1,633 kg)
-Fuel capacity: 92 US gallons (348 litres)
-Powerplant: 1 × Continental IO-550-N Six cylinder horizontally opposed aircraft engine, 310 hp (230 kW)
-Propellers: 3-bladed
-Performance
+// Crew: one
+// Capacity: four passengers
+// Length: 26 ft 0 in (7.92 m)
+// Wingspan: 38 ft 4 in (11.68 m)
+// Height: 8 ft 11 in (2.72 m)
+// Airfoil: Roncz
+// Empty weight: 2,269 lb (1,029 kg)
+// Gross weight: 3,600 lb (1,633 kg)
+// Fuel capacity: 92 US gallons (348 litres)
+// Powerplant: 1 × Continental IO-550-N Six cylinder horizontally opposed aircraft engine, 310 hp (230 kW)
+// Propellers: 3-bladed
+// Performance
 
-Cruise speed: 183 kn (211 mph, 339 km/h)
-Stall speed: 60 kn (69 mph, 110 km/h) flaps down
-Range: 1,049 nmi (1,207 mi, 1,943 km) with reserves at 65% power
-Service ceiling: 17,500 ft (5,300 m)
-Rate of climb: 1,270 ft/min (6.5 m/s)
+// Cruise speed: 183 kn (211 mph, 339 km/h)
+// Stall speed: 60 kn (69 mph, 110 km/h) flaps down
+// Range: 1,049 nmi (1,207 mi, 1,943 km) with reserves at 65% power
+// Service ceiling: 17,500 ft (5,300 m)
+// Rate of climb: 1,270 ft/min (6.5 m/s)

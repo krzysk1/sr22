@@ -7,10 +7,10 @@
 	//
     // This model is free for Personal Use only (Students).
     // Any use in commercial subject requires a Premium membership on RigModels.com
-	// 
+	//
 	// Date: Wed Jan 17 2024; Aug 2024
 	//-------------------------------------
-	
+
     <[modelmanager][][]
         <[pointer_list_tmuniverse][DynamicObjects][]
 
@@ -31,8 +31,8 @@
             >
             <[camera_head][CameraPilot][]
                 <[string8][Body][Fuselage]>
-                <[tmvector3d][R0][ -0.04 0.27 0.95 ]>
-                <[tmvector3d][Direction][ 1.0 0.0 -0.1 ]>
+                <[tmvector3d][R0][ 0.0 0.31 0.95 ]>
+                <[tmvector3d][Direction][ 0.995 0.0 -0.1 ]>
                 <[bool][InCockpit][true]>
                 <[string8][Tags][cockpit pilot left]>
             >
@@ -1116,8 +1116,6 @@
                 <[float64][Speed][15.0]>
                 <[float64][P0][0.0]>
                 <[float64][P1][1.0]>
-                <[float64][P2][0.0]>
-                <[float64][P3][0.0]>
                 <[float64][Position][0.0]>
             >
             <[output_free][ServoStickAileronOutput][]
@@ -1167,8 +1165,6 @@
                 <[float64][Speed][5.0]>
                 <[float64][P0][0.0]>
                 <[float64][P1][-0.436332309619]>
-                <[float64][P2][0.0]>
-                <[float64][P3][0.0]>
             >
             <[output_free][ServoRudderOutput][]
                 <[string8][Input][ServoRudder.Output]>
@@ -2714,7 +2710,7 @@
                 <[tmvector3d][Axis][ 0.0 1.0 0.0 ]>
                 <[tmvector3d][Pivot][ 0.3 0.0 0.2 ]>
                 <[float64][Scaling][0.5236]>
-            >			
+            >
             <[hingedbodygraphics][ThrottleLever][]
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
@@ -2770,7 +2766,7 @@
                 <[string8][Input][StickBaseTransformInput.Output]>
                 <[tmvector3d][Axis][ 0.99688 0.076121 0.020855 ]>
             >
-		
+
             <[graphics_input][StickRollTransformInput][]
                 <[uint32][InputID][ServoStickAileron.Output]>
                 <[float64][Scaling][0.15]>
@@ -2790,20 +2786,20 @@
             <[graphics_translation][StickCopilotBaseTransform][]
                 <[string8][Input][StickBaseTransformInput.Output]>
                 <[tmvector3d][Axis][ 0.99688 -0.076121 0.020855 ]>
-            >				
+            >
             <[graphics_rotation][StickCopilotRollTransform][]
                 <[string8][Input][StickRollTransformInput.Output]>
                 <[tmvector3d][Axis][ 1.0 0.0 0.0 ]>
                 <[tmvector3d][Pivot][0.6513 -0.5055 0.5594]>
                 <[string8][InputTransform][StickCopilotBaseTransform.Output]>
-            >			
+            >
             <[rigidbodygraphics][RightStick][]
                 <[uint32][PositionID][Fuselage.R]>
                 <[uint32][OrientationID][Fuselage.Q]>
                 <[string8][GeometryList][ RightStick RightStickMetal ]>
                 <[string8][InputTransform][StickCopilotRollTransform.Output]>
             >
-			
+
             // human animation
             <[graphics_input][RudderInput][]
                 <[uint32][InputID][ServoRudder.Output]>

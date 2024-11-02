@@ -1,25 +1,29 @@
 ﻿<[file][][]
-    <[object][][]
-        <[int][Version][220]>
-        <[vec32array][ContactSpheres][ ( 1.969 0.0 -0.569 0.189 ) ( -0.2733 1.345 -0.569 0.189 ) ( -0.2733 -1.345 -0.569 0.189 ) ]>
-        <[string8][ICAO][DR40]>
+    <[modelinformation][][]
+        <[int32][Version][220]>
+        <[list_vector4_float64][ContactSpheres][ ( 1.969 0.0 -0.569 0.189 ) ( -0.2733 1.345 -0.569 0.189 ) ( -0.2733 -1.345 -0.569 0.189 ) ]>
+        <[stringt8c][ICAO][DR40]>
         <[string8][DisplayName][Cirrus SR22]>
         <[string8][DisplayNameFull][Cirrus SR22]>
-        <[localized_text_list][Descriptions][]
-          <[localized_text][][]
-            <[string8][Language][en]>
+        <[list_localized_text][Descriptions][]
+          <[localized_text][element][0]
+            <[string8u][Language][en]>
             <[string8][Text][The Cirrus SR22 is a single-engine four- or five-seat composite aircraft built from 2001 by Cirrus Aircraft of Duluth, Minnesota. For Aerofly FS4 made by Krzysztof Kaniewski. Original 3D model comes from RigModels.com.]>
           >
-          <[localized_text][][]
-            <[string8][Language][de]>
+          <[localized_text][element][1]
+            <[string8u][Language][de]>
             <[string8][Text][Die Cirrus SR22 ist ein einmotoriges Flugzeug aus Verbundwerkstoffen mit vier oder fünf Sitzen, das seit 2001 von Cirrus Aircraft in Duluth, Minnesota, gebaut wird. Für Aerofly FS4 erstellt von Krzysztof Kaniewski. Das ursprüngliche 3D-Modell stammt von RigModels.com.]>
           >
+          <[localized_text][element][2]
+            <[string8u][Language][pl]>
+            <[string8][Text][Cirrus SR22 to jednosilnikowy, cztero- lub pięciomiejscowy samolot kompozytowy budowany od 2001 roku przez firmę Cirrus Aircraft z Duluth w stanie Minnesota. Dla Aerofly FS4 wykonany przez Krzysztofa Kaniewskiego. Oryginalny model 3D pochodzi ze strony RigModels.com.]>
+		  >
         >
         <[float64][MaximumTakeoffMass][1633]>
         <[float64][WingSpan]          [11.68]>
-        <[uint]   [Year]              [2001]>
-        <[uint]   [UnitsBuilt]        [1300]>
-        <[uint]   [EngineCount]       [1]>
+        <[uint32] [Year]              [2001]>
+        <[uint32] [UnitsBuilt]        [1300]>
+        <[uint32] [EngineCount]       [1]>
         <[float64][EnginePower]       [118000.0]>
         <[float64][MinimumAirspeed]   [30.0]>
         <[float64][ApproachAirspeed]  [36.1]>
@@ -30,9 +34,9 @@
         <[float64][MaximumAltitude]   [5300.0]>
         <[float64][MaximumSpeed]      [105.4]>
         <[float64][MaximumRange]      [1943000.0]>
-        <[tmvector2d][FlapAirspeedRange]   [ 30.0 57.2 ]>
-        <[tmvector2d][NormalAirspeedRange] [ 32.5 92.2 ]>
-        <[tmvector2d][CautionAirspeedRange][ 92.2 105.4 ]>
+        <[vector2_float64][FlapAirspeedRange]   [ 30.0 57.2 ]>
+        <[vector2_float64][NormalAirspeedRange] [ 32.5 92.2 ]>
+        <[vector2_float64][CautionAirspeedRange][ 92.2 105.4 ]>
         <[string8][Tags][ airplane general_aviation piston flaps gear autopilot ]>
         <[string8][Pilot][pilot_robert]>
     >
